@@ -32,3 +32,15 @@ https://docs.google.com/spreadsheets/d/1uaTA30eYZSbLcZ72zfhbktbIzF0NTiHi/edit?rt
 ## Mind map
 
 https://drive.google.com/file/d/1xri6N8Dr3fUTycE4EvgPfbbpy6g6IW_E/view
+
+## Competitive analysis
+
+https://drive.google.com/drive/folders/1j5H9BZJBB1_P3TbVEIvlP-nWNLUdYiTI
+
+## Backend architecture
+
+https://drive.google.com/drive/folders/1EZcC_0C3JqBpBM3xX1rbaN-58uuHsEuO
+
+## Screens
+
+https://drive.google.com/drive/folders/1rhrK2-S2HT7NeW3LzkgE96vschMjWPGm
