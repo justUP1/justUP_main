@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class JustUpButton extends StatelessWidget {
   final String text;
   final void Function()? press;
-  final Color color, textColor;
+  final Color color;
+  final Color textColor;
 
   const JustUpButton({
     Key? key,
@@ -39,7 +40,9 @@ class JustUpButton extends StatelessWidget {
           textStyle: TextStyle(
               color: textColor,
               fontSize: 14,
-              fontWeight: FontWeight.w500)),
+              fontWeight: FontWeight.w500
+          )
+      )
     );
   }
 }

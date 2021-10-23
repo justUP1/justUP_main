@@ -4,11 +4,12 @@ class JustUpTextFormField extends StatelessWidget {
   final String hintText;
   final IconData icon;
   final ValueChanged<String>? onChanged;
-  JustUpTextFormField({
+  const JustUpTextFormField({
+    Key? key,
     required this.hintText,
     this.icon = Icons.person,
     this.onChanged,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,11 +23,11 @@ class JustUpTextFormField extends StatelessWidget {
       ),
       child: TextField(
         onChanged: onChanged,
-        cursorColor: const Color(0xFF6F35A5),
+        cursorColor: const Color(0xff2247e4),
         decoration: InputDecoration(
           icon: Icon(
             icon,
-            color: const Color(0xFF6F35A5),
+            color: const Color(0xff2247e4),
           ),
           hintText: hintText,
           border: InputBorder.none,

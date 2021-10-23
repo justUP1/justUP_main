@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:http/http.dart' as http;
+import 'package:just_up/checkout/pick_date.dart';
+import 'package:just_up/checkout/pick_route.dart';
 import 'package:just_up/navbar/places.dart';
 import 'package:just_up/navbar/routes.dart';
+import 'package:just_up/widget/just_up_button.dart';
 
 import 'adventures.dart';
 import 'constructor.dart';
@@ -16,6 +19,8 @@ class Navbar extends StatefulWidget {
 }
 
 class _NavbarState extends State<Navbar> {
+  PageController controller = PageController();
+
   int selectedIndex = 0;
 
   double xOffset = 0, yOffset = 0, scaleFactor = 1;
@@ -30,6 +35,10 @@ class _NavbarState extends State<Navbar> {
     Icons.location_on,
   ];
 
+  PageController backgroundController = PageController();
+  PageController carController = PageController();
+  PageController manController = PageController();
+
   void closeDrawer() => setState(() {
     xOffset = 0;
     yOffset = 0;
@@ -43,23 +52,6 @@ class _NavbarState extends State<Navbar> {
     scaleFactor = 0.6;
     showDrawer = true;
   });
-
-  Widget buildPages(int selectedIndex) {
-    switch (selectedIndex) {
-      case 0:
-        return const Friends();
-      case 1:
-        return const Adventures();
-      case 2:
-        return const Constructor();
-      case 3:
-        return const Routes();
-      case 4:
-        return const Places();
-      default:
-        return const Constructor();
-    }
-  }
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -176,7 +168,198 @@ class _NavbarState extends State<Navbar> {
                   ),
                   body: Stack(
                     children: [
-                      buildPages(selectedIndex),
+                      PageView(
+                        controller: controller,
+                        children: [
+                          const Friends(),
+                          const Adventures(),
+                          Scaffold(
+                            body: Stack(
+                              children: [
+                                PageView(
+                                  controller: backgroundController,
+                                  children: [
+                                    Image.asset("images/background1.png", fit: BoxFit.cover,),
+                                    Image.asset("images/background2.png", fit: BoxFit.cover),
+                                    Image.asset("images/background3.png", fit: BoxFit.cover)
+                                  ],
+                                ),
+                                PageView(
+                                  controller: carController,
+                                  children: [
+                                    Image.asset("images/car1.png"),
+                                    Image.asset("images/car2.png"),
+                                    Image.asset("images/car3.png")
+                                  ]
+                                ),
+                                PageView(
+                                  controller: manController,
+                                    children: [
+                                      Image.asset("images/man1.png"),
+                                      Image.asset("images/man2.png"),
+                                      Image.asset("images/man3.png")
+                                    ]
+                                ),
+                                SizedBox(
+                                  height: MediaQuery.of(context).size.height - 50,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            GestureDetector(
+                                                onTap: () {
+                                                  backgroundController.previousPage(
+                                                      duration: const Duration(milliseconds: 500),
+                                                      curve: Curves.ease
+                                                  );
+                                                },
+                                                child: Container(
+                                                    margin: const EdgeInsets.only(left: 20),
+                                                    height: 40,
+                                                    width: 40,
+                                                    decoration: BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                        color: const Color(0xFF49CC96).withOpacity(1)
+                                                    ),
+                                                    child: const Icon(
+                                                        Icons.arrow_back_ios,
+                                                        color: Colors.white
+                                                    )
+                                                )
+                                            ),
+                                            const Spacer(),
+                                            GestureDetector(
+                                                onTap: () {
+                                                  backgroundController.nextPage(
+                                                      duration: const Duration(milliseconds: 500),
+                                                      curve: Curves.ease
+                                                  );
+                                                },
+                                                child: Container(
+                                                    margin: const EdgeInsets.only(left: 20),
+                                                    height: 40,
+                                                    width: 40,
+                                                    decoration: BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                        color: const Color(0xFF49CC96).withOpacity(1)
+                                                    ),
+                                                    child: const Icon(
+                                                        Icons.arrow_forward_ios,
+                                                        color: Colors.white
+                                                    )
+                                                )
+                                            )
+                                          ],
+                                        ),
+                                        Row(
+                                          children: [
+                                            GestureDetector(
+                                                onTap: () {
+                                                  carController.previousPage(
+                                                      duration: const Duration(milliseconds: 500),
+                                                      curve: Curves.ease
+                                                  );
+                                                },
+                                                child: Container(
+                                                    margin: const EdgeInsets.only(left: 20),
+                                                    height: 40,
+                                                    width: 40,
+                                                    decoration: BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                        color: const Color(0xFF49CC96).withOpacity(1)
+                                                    ),
+                                                    child: const Icon(
+                                                        Icons.arrow_back_ios,
+                                                        color: Colors.white
+                                                    )
+                                                )
+                                            ),
+                                            const Spacer(),
+                                            GestureDetector(
+                                                onTap: () {
+                                                  carController.nextPage(
+                                                      duration: const Duration(milliseconds: 500),
+                                                      curve: Curves.ease
+                                                  );
+                                                },
+                                                child: Container(
+                                                    margin: const EdgeInsets.only(left: 20),
+                                                    height: 40,
+                                                    width: 40,
+                                                    decoration: BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                        color: const Color(0xFF49CC96).withOpacity(1)
+                                                    ),
+                                                    child: const Icon(
+                                                        Icons.arrow_forward_ios,
+                                                        color: Colors.white
+                                                    )
+                                                )
+                                            )
+                                          ],
+                                        ),
+                                        Row(
+                                          children: [
+                                            GestureDetector(
+                                                onTap: () {
+                                                  manController.previousPage(
+                                                      duration: const Duration(milliseconds: 500),
+                                                      curve: Curves.ease
+                                                  );
+                                                },
+                                                child: Container(
+                                                    margin: const EdgeInsets.only(left: 20),
+                                                    height: 40,
+                                                    width: 40,
+                                                    decoration: BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                        color: const Color(0xFF49CC96).withOpacity(1)
+                                                    ),
+                                                    child: const Icon(
+                                                        Icons.arrow_back_ios,
+                                                        color: Colors.white
+                                                    )
+                                                )
+                                            ),
+                                            const Spacer(),
+                                            GestureDetector(
+                                                onTap: () {
+                                                  manController.nextPage(
+                                                      duration: const Duration(milliseconds: 500),
+                                                      curve: Curves.ease
+                                                  );
+                                                },
+                                                child: Container(
+                                                    margin: const EdgeInsets.only(left: 20),
+                                                    height: 40,
+                                                    width: 40,
+                                                    decoration: BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                        color: const Color(0xFF49CC96).withOpacity(1)
+                                                    ),
+                                                    child: const Icon(
+                                                        Icons.arrow_forward_ios,
+                                                        color: Colors.white
+                                                    )
+                                                )
+                                            )
+                                          ],
+                                        ),
+                                        JustUpButton(
+                                            text: "Моё путешествие",
+                                          press: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const PickRoute())),
+                                        )
+                                      ]
+                                  )
+                                ),
+                              ],
+                            ),
+                          ),
+                          const Routes(),
+                          const Places()
+                        ]
+                      ),
                       Positioned(
                         bottom: 15,
                         left: 25,
@@ -196,7 +379,14 @@ class _NavbarState extends State<Navbar> {
                               itemBuilder: (ctx, i) => Padding(
                                 padding: const EdgeInsets.symmetric(horizontal: 15),
                                 child: GestureDetector(
-                                  onTap: () => setState(() => selectedIndex = i),
+                                  onTap: () {
+                                    setState(() => selectedIndex = i);
+                                    controller.animateToPage(
+                                        selectedIndex,
+                                        duration: const Duration(milliseconds: 250),
+                                        curve: Curves.ease
+                                    );
+                                  },
                                   child: AnimatedContainer(
                                     duration: const Duration(milliseconds: 250),
                                     width: 35,

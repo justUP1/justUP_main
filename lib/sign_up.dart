@@ -87,11 +87,11 @@ class _SignUpState extends State<SignUp> {
                           ),
                           SizedBox(height: MediaQuery.of(context).size.height * 0.03),
                           JustUpTextFormField(
-                            hintText: "Your Email",
+                            hintText: "Ваш email",
                             onChanged: (value) {},
                           ),
                           JustUpTextFormField(
-                            hintText: "",
+                            hintText: "Ваш пароль",
                             onChanged: (value) {},
                           ),
                           JustUpButton(
@@ -120,7 +120,7 @@ class _SignUpState extends State<SignUp> {
                         JustUpButton(
                           text: "Да",
                           press: () {
-                            Navigator.of(context).pushNamed('/sign_up');
+                            Navigator.of(context).pushReplacementNamed('/sign_up');
                           },
                         ),
                         JustUpButton(

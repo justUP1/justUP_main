@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:just_up/models/route.dart';
 
 class Routes extends StatefulWidget {
   const Routes({Key? key}) : super(key: key);
@@ -8,11 +9,36 @@ class Routes extends StatefulWidget {
 }
 
 class _RoutesState extends State<Routes> {
-  List<String> routeImages = [
-    "https://yamoscow.ru/wp-content/uploads/2020/08/neboskryoby-moskva-siti.jpg",
-    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/a4/e0/27/st-petersburg.jpg?w=1200&h=-1&s=1",
-    "http://www.whitegiraf.ru/images/destinations/russia/anapa/anapa.jpg"
-  ];
+  // List<RouteModel> routeImages = [
+  //   RouteModel(
+  //       from: "Сочи",
+  //       to: "Москва",
+  //       fromTime: "9:00",
+  //       toTime: "21:00",
+  //       url: "https://yamoscow.ru/wp-content/uploads/2020/08/neboskryoby-moskva-siti.jpg",
+  //       price: 1800,
+  //       mark: 5
+  //   ),
+  //   RouteModel(
+  //       from: "",
+  //       to: to,
+  //       fromTime: fromTime,
+  //       toTime: toTime,
+  //       url: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/a4/e0/27/st-petersburg.jpg?w=1200&h=-1&s=1",
+  //       price: price,
+  //       mark: mark
+  //   )
+  //   "http://www.whitegiraf.ru/images/destinations/russia/anapa/anapa.jpg"
+  // ];
+
+  Text _buildRatingStars(int rating) {
+    String stars = '';
+    for (int i = 0; i < rating; i++) {
+      stars += '⭐ ';
+    }
+    stars.trim();
+    return Text(stars);
+  }
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -65,7 +91,7 @@ class _RoutesState extends State<Routes> {
                                 ),
                               ),
                               Text(
-                                'per pax',
+                                '3500р.',
                                 style: TextStyle(
                                   color: Colors.grey,
                                 ),
@@ -80,7 +106,7 @@ class _RoutesState extends State<Routes> {
                           color: Colors.grey,
                         ),
                       ),
-                      //_buildRatingStars(activity.rating),
+                      _buildRatingStars(5),
                       const SizedBox(height: 10.0),
                       Row(
                         children: <Widget>[
@@ -127,11 +153,11 @@ class _RoutesState extends State<Routes> {
                 bottom: 15.0,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20.0),
-                  child: Image.network(
-                    routeImages[index],
-                    width: 110.0,
-                    fit: BoxFit.cover,
-                  ),
+                  // child: Image.network(
+                  //   routeImages[index],
+                  //   width: 110.0,
+                  //   fit: BoxFit.cover,
+                  // ),
                 ),
               ),
             ],
