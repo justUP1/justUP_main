@@ -17,3 +17,18 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Data processing algorithms
 https://docs.google.com/document/d/1BuRFgAfONaeP1yG4mWuka7BlWJJE7RX70Zl7a22Iv0I/edit
+
+## Project Description
+https://docs.google.com/document/d/1XVA0DnPak1-pKn3HXD1V3zo-mp9e-HPO9M5v3R8k1kg/edit
+
+## Custom paths
+
+https://drive.google.com/file/d/1D_j79_das_UtP4hUo8Cd5mZi25KWiReh/view
+
+## Estimate
+
+https://docs.google.com/spreadsheets/d/1uaTA30eYZSbLcZ72zfhbktbIzF0NTiHi/edit?rtpof=true&sd=true
+
+## Mind map
+
+https://drive.google.com/file/d/1xri6N8Dr3fUTycE4EvgPfbbpy6g6IW_E/view
