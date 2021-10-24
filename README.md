@@ -15,6 +15,8 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
+Communication between backend and frontend is done in pythonAnyWhere
+
 ## Data processing algorithms
 https://docs.google.com/document/d/1BuRFgAfONaeP1yG4mWuka7BlWJJE7RX70Zl7a22Iv0I/edit
 
