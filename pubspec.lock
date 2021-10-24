@@ -69,6 +69,11 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
+  flutter_localizations:
+    dependency: transitive
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
@@ -83,13 +88,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  flutter_staggered_grid_view:
+    dependency: "direct main"
+    description:
+      name: flutter_staggered_grid_view
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.1"
   flutter_svg:
     dependency: "direct main"
     description:
       name: flutter_svg
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.23.0+1"
+    version: "0.22.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -100,6 +112,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  font_awesome_flutter:
+    dependency: "direct main"
+    description:
+      name: font_awesome_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "9.2.0"
   geolocator:
     dependency: "direct main"
     description:
@@ -156,6 +175,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.0.20-nullsafety.5"
+  google_nav_bar:
+    dependency: "direct main"
+    description:
+      name: google_nav_bar
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.5"
   http:
     dependency: "direct main"
     description:
@@ -240,6 +266,34 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.2.1"
+  pay:
+    dependency: "direct main"
+    description:
+      name: pay
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.6"
+  pay_android:
+    dependency: transitive
+    description:
+      name: pay_android
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.5"
+  pay_ios:
+    dependency: transitive
+    description:
+      name: pay_ios
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.5"
+  pay_platform_interface:
+    dependency: transitive
+    description:
+      name: pay_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.2"
   petitparser:
     dependency: transitive
     description:
@@ -343,6 +397,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "5.3.1"
+  yaml:
+    dependency: transitive
+    description:
+      name: yaml
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.1.0"
 sdks:
   dart: ">=2.14.0 <3.0.0"
   flutter: ">=2.5.0"

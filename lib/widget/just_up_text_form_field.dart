@@ -4,10 +4,12 @@ class JustUpTextFormField extends StatelessWidget {
   final String hintText;
   final IconData icon;
   final ValueChanged<String>? onChanged;
+  final bool obscureText;
   const JustUpTextFormField({
     Key? key,
     required this.hintText,
     this.icon = Icons.person,
+    this.obscureText = false,
     this.onChanged,
   }) : super(key: key);
 
@@ -23,6 +25,7 @@ class JustUpTextFormField extends StatelessWidget {
       ),
       child: TextField(
         onChanged: onChanged,
+        obscureText: obscureText,
         cursorColor: const Color(0xff2247e4),
         decoration: InputDecoration(
           icon: Icon(
